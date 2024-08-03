@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "NpmRegistry.Wrapper": {
+      "commandName": "Project"
+    }
+  }
+}

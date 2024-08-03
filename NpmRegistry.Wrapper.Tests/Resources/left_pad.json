@@ -1,0 +1,651 @@
+{
+    "_id": "left_pad",
+    "_rev": "13-fda8241325148ec902747694452bf9b5",
+    "name": "left_pad",
+    "time": {
+        "modified": "2022-06-19T11:27:11.050Z",
+        "created": "2016-03-22T23:16:36.039Z",
+        "0.0.3": "2016-03-22T23:16:36.039Z",
+        "0.0.2": "2016-05-15T19:51:33.695Z",
+        "0.0.4": "2016-05-15T20:31:19.791Z",
+        "0.0.5": "2016-05-17T20:37:20.019Z",
+        "0.0.6": "2016-05-18T10:30:35.112Z",
+        "0.0.7": "2016-05-18T20:05:33.842Z",
+        "0.0.8": "2016-05-18T21:02:28.029Z",
+        "0.0.9": "2016-05-19T06:51:23.382Z",
+        "0.0.10": "2016-05-19T08:52:06.552Z",
+        "0.0.11": "2017-03-21T17:56:51.945Z"
+    },
+    "maintainers": [
+        {
+            "name": "cloned2k16",
+            "email": "paolo@yaoo.net"
+        }
+    ],
+    "dist-tags": {
+        "latest": "0.0.11"
+    },
+    "description": "String left pad",
+    "readme": "## _padLeft\r\nIt was originally intended as an update for a popular package found in NPMjs,\r\nthen I decided that it's so much different than that  and maybe deserves its own place there ...\r\n\r\ncheck it in your browser [HERE](http://cloned2k16.github.io/_padLeft/)\r\n\r\nYou can easily install  by using Bower, a package manager for front-end components.\r\n\r\n[![bower](http://benschwarz.github.io/bower-badges/badge@2x.png)](http://bower.herokuapp.com/packages/left_pad)\r\n`bower install pad_left`\r\n`bower install left_pad`\r\n\r\n[![Package Info](http://img.shields.io/badge/npm-pad_left-blue.svg)](https://npmjs.org/package/pad_left)\r\n[![npm](https://badge.fury.io/js/pad_left.svg)](http://badge.fury.io/js/pad_left)\r\n[![license](https://img.shields.io/npm/l/pad_left.svg)](https://npmjs.org/package/pad_left) \r\n[![installs](https://img.shields.io/npm/dt/pad_left.svg)](https://npmjs.org/package/pad_left) \r\n\r\n[![Package Info](http://img.shields.io/badge/npm-left_pad-blue.svg)](https://npmjs.org/package/left_pad)\r\n[![npm](https://badge.fury.io/js/left_pad.svg)](http://badge.fury.io/js/left_pad)\r\n[![license](https://img.shields.io/npm/l/left_pad.svg)](https://npmjs.org/package/left_pad) \r\n[![installs](https://img.shields.io/npm/dt/left_pad.svg)](https://npmjs.org/package/left_pad) \r\n\r\n\r\n[![Dependency Status](https://david-dm.org/cloned2k16/_padLeft.svg)](https://david-dm.org/cloned2k16/_padLeft)\r\n[![devDependency Status](https://david-dm.org/cloned2k16/_padLeft/dev-status.svg)](https://david-dm.org/cloned2k16/_padLeft/dev-status)\r\n\r\n[![Build Status](https://travis-ci.org/cloned2k16/_padLeft.svg?branch=master)](https://travis-ci.org/cloned2k16/_padLeft)\r\n\r\n[ ![Codeship Status for cloned2k16/_padLeft](https://codeship.com/projects/ead50d10-fd08-0133-a16f-12bea37b94ef/status?branch=master)](https://codeship.com/projects/152113)\r\n\r\n\r\n",
+    "versions": {
+        "0.0.2": {
+            "name": "left_pad",
+            "version": "0.0.2",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {},
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "e9090e90081d818c64727c26b1d195b18e4c8467",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.2",
+            "_shasum": "74845894f0cef47259b39aad48252bef498bc6ee",
+            "_from": ".",
+            "_npmVersion": "2.14.9",
+            "_nodeVersion": "0.12.12",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "74845894f0cef47259b39aad48252bef498bc6ee",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.2.tgz",
+                "integrity": "sha512-xStc0jZEvly0pqT2/b8LF8AnONNW36+D3jEtBcPLhhl27GYI9e1/8c8LzNQMZ/sJHEkpacOiFIqCUmQpagmXtw==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEQCIEkbvXca7mxWe2a4hGewUE1w19AG8clo/iXdwn4GiUiGAiAEqXo9/jM66hUKe4xHgthRLmDQpC2z8w9DiUjytpvU0g=="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.2.tgz_1463341891702_0.4503703098744154"
+            }
+        },
+        "0.0.4": {
+            "name": "left_pad",
+            "version": "0.0.4",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {},
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "539da3f5c00fdc4726fc697fa4e3767495acd679",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.4",
+            "_shasum": "dfe22ac37f30b8d8af6db5143b7aa25869d2310d",
+            "_from": ".",
+            "_npmVersion": "2.14.9",
+            "_nodeVersion": "0.12.12",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "dfe22ac37f30b8d8af6db5143b7aa25869d2310d",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.4.tgz",
+                "integrity": "sha512-utaK4T5Lm+PzVWJp2eJrIpPvZa2PbvmUpSe9jnqoGVegyIxqwUzovxvDbvxFvGpkPC6s802yYbnkWe0j+XIGqg==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEQCIHpEmffCsAt/bsxKFn6kkhJUwwKdWbNwN3LG8cC96hs+AiAzRRe0cfV5FyKqtILGgeq3Frpy8LIKe9nU2kkYt7YRrg=="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.4.tgz_1463344277787_0.5051685958169401"
+            }
+        },
+        "0.0.5": {
+            "name": "left_pad",
+            "version": "0.0.5",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {},
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "1344ac0427b2cf52a1635897dd31caacf108d105",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.5",
+            "_shasum": "fcd66ce612093d2367addcbe301ba5acb8e332b9",
+            "_from": ".",
+            "_npmVersion": "2.15.1",
+            "_nodeVersion": "4.4.4",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "fcd66ce612093d2367addcbe301ba5acb8e332b9",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.5.tgz",
+                "integrity": "sha512-oHX/v4iPilz0ultbteVoz/GLnc44WfAJoV2T7lctwd64Qa8eSRb/OVVkr+E2SEir2HRkyRIowH7Vl+pbXBXglg==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIFlVg+qVRV2sYL8pzwW4PvAjhKiuXA+wHzwXF8YkUAdjAiEAgapvyIEWPvHIWl0VXf2/BSNXwTVNcsxTBpm6iXKgoPc="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.5.tgz_1463517437281_0.2267003261949867"
+            }
+        },
+        "0.0.6": {
+            "name": "left_pad",
+            "version": "0.0.6",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "4f45d02ce3d61200660b8be024ecbad6664e5b7c",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.6",
+            "_shasum": "8d72f1abb479192e8e501cfc45236fd0bbf032d4",
+            "_from": ".",
+            "_npmVersion": "2.14.9",
+            "_nodeVersion": "0.12.12",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "8d72f1abb479192e8e501cfc45236fd0bbf032d4",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.6.tgz",
+                "integrity": "sha512-KBO0/M6x785OgZP717/UjRPw+CwzkqMGy+KOrDjw9jJSUtkEa39rfSyXL6B+pX9vNld8ZJDyD/wi6g9x6yjAiw==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEYCIQDtmrUfQbhWVGRdZtJvwHckICwV4h6+V81fnV/fXh33FAIhANwWQRSNg/NUTJaUEFIz2O9s2LmYO0iayzb2zg1Qm50Y"
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.6.tgz_1463567432207_0.7874386264011264"
+            }
+        },
+        "0.0.7": {
+            "name": "left_pad",
+            "version": "0.0.7",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "b4bf51358fe113885c3ae688e7e991b084a7946d",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.7",
+            "_shasum": "16970d6f6a6811ad8149833134fa382529aa21c4",
+            "_from": ".",
+            "_npmVersion": "3.7.3",
+            "_nodeVersion": "5.8.0",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "16970d6f6a6811ad8149833134fa382529aa21c4",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.7.tgz",
+                "integrity": "sha512-ya6tHoOc7YVmndp2eZiSrRcwtGPPhOpQzt3wIDc6MaUrwqrFZulj2BFeY6TGEnou2QhFw+n9lGWoMinEKFsrzw==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIC2y8fDJ7n4p5pbr8xcKCwGJoHi17LuYGYdObGYUi5mFAiEAs3lLgpk9sJGIsqCYB5QCl1v1EPtiYk1p4eg5iybO91E="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-12-west.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.7.tgz_1463601931506_0.15836391155607998"
+            }
+        },
+        "0.0.8": {
+            "name": "left_pad",
+            "version": "0.0.8",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "473e88acbedb5e0d52b7beb1b913d22d9b7f5e32",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.8",
+            "_shasum": "d6894a9de9ebdaca1d470be7a43d86818780195f",
+            "_from": ".",
+            "_npmVersion": "3.7.3",
+            "_nodeVersion": "5.8.0",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "d6894a9de9ebdaca1d470be7a43d86818780195f",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.8.tgz",
+                "integrity": "sha512-A65qzbcQpefuMcYESCoL1XC4Dq3BQWVuM84Tje00yTPafyXlykoaKFYLGEJt5CgqDZBhxCPLOOKfmO+oYsvksw==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIGDQjst0fZ2+8Jcp4GsbuZw1WO3Fz9ndtYr7AxXeOdH4AiEApV7Y5Q8zMPnRUHOQr3wfLUx/DnJiP75Iy9rCJP8PnPQ="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.8.tgz_1463605344925_0.8420040893834084"
+            }
+        },
+        "0.0.9": {
+            "name": "left_pad",
+            "version": "0.0.9",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "93f1c6b6850dcb2d6355018135df306ee384fc3b",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.9",
+            "_shasum": "9d9112728f9397d358cc755e8810de7426af39f8",
+            "_from": ".",
+            "_npmVersion": "3.7.3",
+            "_nodeVersion": "5.8.0",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "9d9112728f9397d358cc755e8810de7426af39f8",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.9.tgz",
+                "integrity": "sha512-AD69IKt9rTpZgFjWxzYSMH0k6vCEnwVcEeEarxJpBM+QEJkoLf1zHs8hO9f6iL4JoJeyF+N5ysSnGOg8JNxdZg==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIQCUF1VNZD+HWMLwPCEeD/qrU3N8dzAcFt9a3eDsG8o2nAIgYaw2Gp5f84wQseBe78gt8FpCcgli0/PcOkV7q7cE8Uc="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-12-west.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.9.tgz_1463640678934_0.01992791797965765"
+            }
+        },
+        "0.0.10": {
+            "name": "left_pad",
+            "version": "0.0.10",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": "~4.5.1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "14fb8c54f295f5976545882f7364e1f8aae34961",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.10",
+            "_shasum": "0ef26724f8a4984ae6773112052294dddf6b2760",
+            "_from": ".",
+            "_npmVersion": "3.7.3",
+            "_nodeVersion": "5.8.0",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "0ef26724f8a4984ae6773112052294dddf6b2760",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.10.tgz",
+                "integrity": "sha512-BzqGTiqid3h64P1FVZD7L2o51Gp50qaAah98Z3t+wRTPDc3Ham6Q9aj0GrzmfeU5zOJPDjLKpNNr73XKXKDS8g==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIQCp4dvpO8V8oTU3Shb65kkir9HGkV+i2LbgOcghStjrxwIgRUuVbR9AKcwrFB6GqemcARcw+tsWSHQKDy4yhK9VG5w="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-16-east.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.10.tgz_1463647923626_0.39852909347973764"
+            }
+        },
+        "0.0.11": {
+            "name": "left_pad",
+            "version": "0.0.11",
+            "description": "String left pad",
+            "license": "CC-BY-NC-4.0",
+            "keywords": [
+                "padleft",
+                "leftpad",
+                "left",
+                "pad",
+                "padding",
+                "string",
+                "repeat"
+            ],
+            "bugs": {
+                "url": "https://github.com/cloned2k16/_padLeft/issues"
+            },
+            "dependencies": {
+                "string_prototypes": ""
+            },
+            "devDependencies": {
+                "tape": ""
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+            },
+            "main": "index.js",
+            "scripts": {
+                "test": "node test"
+            },
+            "author": {
+                "name": "Paolo Lioy"
+            },
+            "gitHead": "05a4a1d7c073c0275093c4ee977808017dd6cd80",
+            "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+            "_id": "left_pad@0.0.11",
+            "_shasum": "80543b1a16a8661224f255ae56ee3a47ee692e49",
+            "_from": ".",
+            "_npmVersion": "3.8.6",
+            "_nodeVersion": "6.1.0",
+            "_npmUser": {
+                "name": "cloned2k16",
+                "email": "paolo@yaoo.net"
+            },
+            "dist": {
+                "shasum": "80543b1a16a8661224f255ae56ee3a47ee692e49",
+                "tarball": "https://registry.npmjs.org/left_pad/-/left_pad-0.0.11.tgz",
+                "integrity": "sha512-/avWK5s6A/pTvbLiEDRA6jh8gugxuHRJqAYokWSvTo2Ay2TALkq3N++xujdAdGVT3L48iYJzFCzXAgTq/IibLQ==",
+                "signatures": [
+                    {
+                        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                        "sig": "MEUCIQCJk/7PER2K5wcBf2oWmU3vuB+HR8lNOeIM2s9rIrpsGwIgam2JpJZM8xOig/uqPoBfGqTKjA8EJD6lDq4YDP18YK0="
+                    }
+                ]
+            },
+            "maintainers": [
+                {
+                    "name": "cloned2k16",
+                    "email": "paolo@yaoo.net"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "packages-12-west.internal.npmjs.com",
+                "tmp": "tmp/left_pad-0.0.11.tgz_1490119010001_0.566812866833061"
+            }
+        }
+    },
+    "homepage": "https://github.com/cloned2k16/_padLeft#readme",
+    "keywords": [
+        "padleft",
+        "leftpad",
+        "left",
+        "pad",
+        "padding",
+        "string",
+        "repeat"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/cloned2k16/_padLeft.git"
+    },
+    "author": {
+        "name": "Paolo Lioy"
+    },
+    "bugs": {
+        "url": "https://github.com/cloned2k16/_padLeft/issues"
+    },
+    "license": "CC-BY-NC-4.0",
+    "readmeFilename": "README.md"
+}

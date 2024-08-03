@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NpmRegistry.Wrapper.Sample": {
+      "commandName": "Project",
+      "commandLineArgs": "left-pad"
+    }
+  }
+}
