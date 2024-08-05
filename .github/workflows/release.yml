@@ -23,11 +23,11 @@ jobs:
         VERSION=$(echo "${{ steps.get_version.outputs.version }}")
         echo $VERSION
               
-    # edit Libraries.IO.SDK.csproj to replace with desired version
+    # edit NpmRegistry.Wrapper.csproj to replace with desired version
     - name: Replace version
       uses: jacobtomlinson/gha-find-replace@3.0.3
       with:
-        include: "*/Libraries.IO.SDK/Libraries.IO.SDK.csproj"
+        include: "*/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj"
         find: <Version>1.0.0</Version>
         replace: <Version>${{ steps.get_version.outputs.version }}</Version>
 
@@ -43,7 +43,7 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/src/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
+      run: dotnet pack /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
 
     # Publish package to NuGet
     - name: Setup NuGet
