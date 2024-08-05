@@ -8,6 +8,15 @@ namespace NpmRegistry.Wrapper;
 
 public interface INpmRegistryClient
 {
+    /// <summary>
+    /// Retrieve package metadata from https://registry.npmjs.org/ by package name and optionally, version.
+    /// If version is not specified then information for all versions is returned.
+    /// Note that some information (e.g., readme info) is only included when no version is specified.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="version"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     Task<NpmPackage?> GetPackageData(string name, string? version, CancellationToken cancellationToken); 
 }
 

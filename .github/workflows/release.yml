@@ -1,0 +1,53 @@
+name: release
+
+on:
+  release:
+    types:
+      - edited
+      - released
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # get version from tag (e.g., v1.2.3 --> 1.2.3)
+    - name: Get version
+      id: get_version
+      uses: JanneMattila/get-version-from-tag@v3
+
+    - name: Display version
+      run: |
+        VERSION=$(echo "${{ steps.get_version.outputs.version }}")
+        echo $VERSION
+              
+    # edit Libraries.IO.SDK.csproj to replace with desired version
+    - name: Replace version
+      uses: jacobtomlinson/gha-find-replace@3.0.3
+      with:
+        include: "*/Libraries.IO.SDK/Libraries.IO.SDK.csproj"
+        find: <Version>1.0.0</Version>
+        replace: <Version>${{ steps.get_version.outputs.version }}</Version>
+
+    # build our library, run tests, and create the NuGet package
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore 
+    - name: Test
+      run: dotnet test --configuration Release --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/src/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
+
+    # Publish package to NuGet
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+    - name: Publish to Nuget
+      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+      
