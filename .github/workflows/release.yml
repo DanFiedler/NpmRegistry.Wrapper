@@ -27,9 +27,12 @@ jobs:
     - name: Replace version
       uses: jacobtomlinson/gha-find-replace@3.0.3
       with:
-        include: "*/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj"
+        include: /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
         find: <Version>1.0.0</Version>
         replace: <Version>${{ steps.get_version.outputs.version }}</Version>
+
+    - name: Display project file
+      run: cat /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
 
     # build our library, run tests, and create the NuGet package
     - name: Setup .NET
