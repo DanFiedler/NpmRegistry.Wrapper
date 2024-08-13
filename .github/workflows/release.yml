@@ -25,7 +25,7 @@ jobs:
               
     # edit NpmRegistry.Wrapper.csproj to replace with desired version
     - name: Replace version
-      run: sed -i 's/<Version>1.0.0/<Version>${{ steps.get_version.outputs.version }}/g' *.csproj
+      run: sed -i 's/<Version>1.0.0/<Version>${{ steps.get_version.outputs.version }}/g' /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
 
     - name: Display project file
       run: cat /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
