@@ -10,8 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\coffee_script_1_12_7.json" />
     <None Remove="Resources\left_pad.json" />
     <None Remove="Resources\left_pad_v11.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\coffee_script_1_12_7.json" />
   </ItemGroup>
 
   <ItemGroup>

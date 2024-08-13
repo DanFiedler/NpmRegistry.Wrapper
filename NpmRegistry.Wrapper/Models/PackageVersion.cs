@@ -17,7 +17,8 @@ public class PackageVersion
     public string Main { get; set; } = string.Empty;
 
     [JsonPropertyName("scripts")]
-    public Scripts? Scripts { get; set; }
+    [JsonConverter(typeof(ScriptListJsonConverter))]
+    public ScriptList? Scripts { get; set; }
 
     //[JsonPropertyName("author")]
     //public Author? Author { get; set; }
