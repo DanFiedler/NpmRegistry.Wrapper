@@ -27,6 +27,7 @@ public class NpmPackage
     public string Description { get; set; } = string.Empty;
 
     [JsonPropertyName("author")]
+    [JsonConverter(typeof(AuthorJsonConverter))]
     public Author? Author { get; set; }
 
     [JsonPropertyName("license")]

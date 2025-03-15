@@ -15,9 +15,10 @@ public interface INpmRegistryClient
     /// </summary>
     /// <param name="name"></param>
     /// <param name="version"></param>
+    /// <param name="ns"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<NpmPackage?> GetPackageData(string name, string? version, CancellationToken cancellationToken); 
+    Task<NpmPackage?> GetPackageData(string name, string? version, string? ns, CancellationToken cancellationToken); 
 }
 
 public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFactory httpClientFactory) : INpmRegistryClient
@@ -25,10 +26,10 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
     private readonly ILogger<NpmRegistryClient> _logger = logger;
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
 
-    public async Task<NpmPackage?> GetPackageData(string name, string? version, CancellationToken cancellationToken)
+    public async Task<NpmPackage?> GetPackageData(string name, string? version, string? ns, CancellationToken cancellationToken)
     {
         var httpClient = _httpClientFactory.CreateClient();
-        var url = BuildUrl(name, version);
+        var url = BuildUrl(name, version, ns);
 
         try
         {
@@ -46,11 +47,19 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
         return null;
     }
 
-    private static string BuildUrl(string name, string? version)
+    private static string BuildUrl(string name, string? version, string? ns)
     {
         string encodedName = UrlEncoder.Default.Encode(name);
 
         var sb = new StringBuilder("https://registry.npmjs.org/");
+
+        if(!string.IsNullOrEmpty(ns))
+        {
+            string encodedNs = UrlEncoder.Default.Encode($"@{ns}");
+            sb.Append(encodedNs);
+            sb.Append('/');
+        }
+
         sb.Append(encodedName);
 
         if (!string.IsNullOrEmpty(version))

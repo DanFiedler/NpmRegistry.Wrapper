@@ -13,7 +13,7 @@ public class NpmRegistryClientTests
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("name", null, CancellationToken.None);
+        var packageData = await npmClient.GetPackageData("name", null, null, CancellationToken.None);
         
         Assert.NotNull(packageData);
         Assert.NotNull(packageData.Versions);
@@ -27,7 +27,7 @@ public class NpmRegistryClientTests
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", CancellationToken.None);
+        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", null, CancellationToken.None);
 
         Assert.NotNull(packageData);
         Assert.Single(packageData.Maintainers);
@@ -40,7 +40,7 @@ public class NpmRegistryClientTests
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", CancellationToken.None);
+        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", null, CancellationToken.None);
 
         Assert.NotNull(packageData);
         Assert.NotNull(packageData.Versions);

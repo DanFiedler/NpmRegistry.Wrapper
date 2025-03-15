@@ -13,16 +13,21 @@ internal class Program
         // consider using CommandLineParser instead of manually parsing args
         string packageName = args[0];
         string? version = null;
+        string? ns = null;
         if( args.Length > 1 )
         {
             version = args[1];
+        }
+        if( args.Length > 2 )
+        {
+            ns = args[2];
         }
 
         var host = CreateApplicationHost(args);
         var npmClient = host.Services.GetRequiredService<INpmRegistryClient>();
 
         var cts = new CancellationTokenSource();
-        var packageData = await npmClient.GetPackageData(packageName, version, cts.Token);
+        var packageData = await npmClient.GetPackageData(packageName, version, ns, cts.Token);
         if( packageData == null )
         {
             Console.WriteLine($"Failed to retrieve package data for: {packageName}");
@@ -33,7 +38,7 @@ internal class Program
             if (packageData.Versions != null)
             {
                 Console.WriteLine("Versions:");
-                packageData.Versions.PackageVersions = packageData.Versions.PackageVersions.OrderBy(v => v.Version).ToList();
+                packageData.Versions.PackageVersions = [.. packageData.Versions.PackageVersions.OrderBy(v => v.Version)];
                 foreach (var packageVersion in packageData.Versions.PackageVersions)
                 {
                     Console.WriteLine($"  - {packageVersion.Version} with sha:{packageVersion.Dist?.Shasum}");

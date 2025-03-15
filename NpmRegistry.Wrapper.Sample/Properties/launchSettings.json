@@ -1,8 +1,20 @@
 {
-  "profiles": {
-    "NpmRegistry.Wrapper.Sample": {
-      "commandName": "Project",
-      "commandLineArgs": "left-pad"
+    "profiles": {
+        "WSL": {
+            "commandName": "WSL2",
+            "distributionName": ""
+        },
+        "left-pad": {
+            "commandName": "Project",
+            "commandLineArgs": "left-pad"
+        },
+        "lodash 4.17.21": {
+            "commandName": "Project",
+            "commandLineArgs": "lodash 4.17.21"
+        },
+        "babel 7.26.10 core": {
+            "commandName": "Project",
+            "commandLineArgs": "core 7.26.10 babel"
+        }
     }
-  }
 }
