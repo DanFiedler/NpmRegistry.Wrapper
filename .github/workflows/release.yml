@@ -45,8 +45,7 @@ jobs:
       run: dotnet pack /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
 
     # Publish package to NuGet
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
     - name: Publish to Nuget
-      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGET_API_KEY}}
+
       
