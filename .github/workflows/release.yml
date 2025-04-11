@@ -16,7 +16,7 @@ jobs:
     # get version from tag (e.g., v1.2.3 --> 1.2.3)
     - name: Get version
       id: get_version
-      uses: JanneMattila/get-version-from-tag@v3
+      uses: JanneMattila/get-version-from-tag@22de24a56e53ef11268538c9e6a77659a142afa7 # v4
 
     - name: Display version
       run: |
@@ -34,7 +34,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
