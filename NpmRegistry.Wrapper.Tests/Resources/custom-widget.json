@@ -1,0 +1,307 @@
+﻿{
+    "_id": "bin-script-custom-widget",
+    "_rev": "4-c46092e1c72cda4ad4f4b798e5766bb6",
+    "name": "bin-script-custom-widget",
+    "dist-tags": { "latest": "1.0.3" },
+    "versions": {
+        "1.0.0": {
+            "name": "bin-script-custom-widget",
+            "version": "1.0.0",
+            "keywords": [ "Profile", "user" ],
+            "author": {
+                "name": "Some Guy",
+                "email": "foo@gmail.com"
+            },
+            "license": "ISC",
+            "_id": "bin-script-custom-widget@1.0.0",
+            "maintainers": [
+                {
+                    "name": "bbbbxxx",
+                    "email": "875077968@qq.com"
+                }
+            ],
+            "homepage": "https://github.com/user/user#readme",
+            "bugs": { "url": "https://github.com/user/user/issues" },
+            "dist": {
+                "shasum": "ace421ed27fa7ea0a919dbea4e927cf518d717f2",
+                "tarball": "https://registry.npmjs.org/bin-script-custom-widget/-/bin-script-custom-widget-1.0.0.tgz",
+                "fileCount": 4,
+                "integrity": "sha512-TKqXuI6UNbetyd+/cP7T4aemB7dJDQpB0sBJQ/bNLPnUewHj+fdXzT0vXfbXtyJkyf5BIYpEMItwpibfZyBetA==",
+                "signatures": [
+                    {
+                        "sig": "MEUCIQDQgLLB5bgNgbFUqrfQHzQlxV/ZDRZxQSNUHPGLaaLhmQIgB+TzhH3PFSw3+DVhzPT8/GNvrbR077/IydhtfFmqPfc=",
+                        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+                    }
+                ],
+                "unpackedSize": 2737
+            },
+            "main": "index.js",
+            "scripts": { "postinstall": "node index.js" },
+            "_npmUser": {
+                "name": "bbbbxxx",
+                "email": "875077968@qq.com"
+            },
+            "repository": {
+                "url": "git+https://github.com/user/user.git",
+                "type": "git"
+            },
+            "_npmVersion": "10.5.0",
+            "description": "Some Guy github.com/user",
+            "directories": {},
+            "_nodeVersion": "21.7.2",
+            "_hasShrinkwrap": false,
+            "aipage-widgets": [
+                {
+                    "type": "react-info-card",
+                    "entry": "/dist/reactInfoCard.umd",
+                    "files": [ "/dist/reactInfoCard.css" ],
+                    "framework": "react",
+                    "description": "信息展示卡片",
+                    "editorPlugin": {
+                        "tag": [ "自定义组件" ],
+                        "sort": 100,
+                        "device": [ "mobile", "pc" ],
+                        "pluginEntry": "/dist/reactInfoCardPlugin.umd"
+                    }
+                }
+            ],
+            "_npmOperationalInternal": {
+                "tmp": "tmp/bin-script-custom-widget_1.0.0_1747240764397_0.3196185388671797",
+                "host": "s3://npm-registry-packages-npm-production"
+            }
+        },
+        "1.0.1": {
+            "name": "bin-script-custom-widget",
+            "version": "1.0.1",
+            "keywords": [ "Profile", "user" ],
+            "author": {
+                "name": "Some Guy",
+                "email": "foo@gmail.com"
+            },
+            "license": "ISC",
+            "_id": "bin-script-custom-widget@1.0.1",
+            "maintainers": [
+                {
+                    "name": "bbbbxxx",
+                    "email": "875077968@qq.com"
+                }
+            ],
+            "homepage": "https://github.com/user/user#readme",
+            "bugs": { "url": "https://github.com/user/user/issues" },
+            "bin": { "webpack": "bin/webpack.js" },
+            "dist": {
+                "shasum": "02fcfa5178bd25a6a8634bfe8e0be2e7318377fe",
+                "tarball": "https://registry.npmjs.org/bin-script-custom-widget/-/bin-script-custom-widget-1.0.1.tgz",
+                "fileCount": 6,
+                "integrity": "sha512-EMOkR/6PFwGrBxNmjh12gdPHLOvG7sb4atG1mPUvrVa0SVqDKKVnP2tpf7rinUz0/5RS+tzjACoK8pCUq/R+iw==",
+                "signatures": [
+                    {
+                        "sig": "MEQCIDqo9CYEpT4BtQSh71xLtfhmfwd1V/F+MfbHQ4K13cghAiAl/qeh9/7tzHZ2xHhvFfoSJjO/3PtC7PLjOkA23UYHhA==",
+                        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+                    }
+                ],
+                "unpackedSize": 5031
+            },
+            "main": "index.js",
+            "scripts": { "postinstall": "node index.js" },
+            "_npmUser": {
+                "name": "bbbbxxx",
+                "email": "875077968@qq.com"
+            },
+            "repository": {
+                "url": "git+https://github.com/user/user.git",
+                "type": "git"
+            },
+            "_npmVersion": "10.5.0",
+            "description": "Some Guy github.com/user",
+            "directories": {},
+            "_nodeVersion": "21.7.2",
+            "_hasShrinkwrap": false,
+            "aipage-widgets": [
+                {
+                    "type": "react-info-card",
+                    "entry": "/dist/reactInfoCard.umd",
+                    "files": [ "/dist/reactInfoCard.css" ],
+                    "framework": "react",
+                    "description": "信息展示卡片",
+                    "editorPlugin": {
+                        "tag": [ "自定义组件" ],
+                        "sort": 100,
+                        "device": [ "mobile", "pc" ],
+                        "pluginEntry": "/dist/reactInfoCardPlugin.umd"
+                    }
+                }
+            ],
+            "_npmOperationalInternal": {
+                "tmp": "tmp/bin-script-custom-widget_1.0.1_1747241065751_0.24308495870240643",
+                "host": "s3://npm-registry-packages-npm-production"
+            }
+        },
+        "1.0.2": {
+            "name": "bin-script-custom-widget",
+            "version": "1.0.2",
+            "keywords": [ "Profile", "user" ],
+            "author": {
+                "name": "Some Guy",
+                "email": "foo@gmail.com"
+            },
+            "license": "ISC",
+            "_id": "bin-script-custom-widget@1.0.2",
+            "maintainers": [
+                {
+                    "name": "bbbbxxx",
+                    "email": "875077968@qq.com"
+                }
+            ],
+            "homepage": "https://github.com/user/user#readme",
+            "bugs": { "url": "https://github.com/user/user/issues" },
+            "bin": { "webpack": "bin/webpack.js" },
+            "dist": {
+                "shasum": "c422d920e4c4fa2f0d4ebbc57ca3c3caf269c2c5",
+                "tarball": "https://registry.npmjs.org/bin-script-custom-widget/-/bin-script-custom-widget-1.0.2.tgz",
+                "fileCount": 7,
+                "integrity": "sha512-rcwmLe8Bz1mhhhcLYsh3qip9yRCgwBqMY6ZPL82KhF+XQnFbp99WHg83rjDwUNaEmFZbrz7GLZS52myMWBld9w==",
+                "signatures": [
+                    {
+                        "sig": "MEYCIQDJWCJO1cN1dWZck+5szZp4y0bAU88atUFBq1QJC6nj7AIhAJKyjbLGc9wUgKHKkFRjrbU2Dm7KAzF8t8HbWXj6HVQQ",
+                        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+                    }
+                ],
+                "unpackedSize": 9282
+            },
+            "main": "index.js",
+            "scripts": { "postinstall": "node index.js" },
+            "_npmUser": {
+                "name": "bbbbxxx",
+                "email": "875077968@qq.com"
+            },
+            "repository": {
+                "url": "git+https://github.com/user/user.git",
+                "type": "git"
+            },
+            "_npmVersion": "10.5.0",
+            "description": "Some Guy github.com/user",
+            "directories": {},
+            "_nodeVersion": "21.7.2",
+            "_hasShrinkwrap": false,
+            "aipage-widgets": [
+                {
+                    "type": "react-info-card",
+                    "entry": "/dist/reactInfoCard.umd",
+                    "files": [ "/dist/reactInfoCard.css" ],
+                    "framework": "react",
+                    "description": "信息展示卡片",
+                    "editorPlugin": {
+                        "tag": [ "自定义组件" ],
+                        "sort": 100,
+                        "device": [ "mobile", "pc" ],
+                        "pluginEntry": "../../../../../../../../../../../../../../../etc/passwd"
+                    }
+                }
+            ],
+            "_npmOperationalInternal": {
+                "tmp": "tmp/bin-script-custom-widget_1.0.2_1747241472799_0.03353688415036693",
+                "host": "s3://npm-registry-packages-npm-production"
+            }
+        },
+        "1.0.3": {
+            "name": "bin-script-custom-widget",
+            "version": "1.0.3",
+            "description": "Some Guy github.com/user",
+            "main": "index.js",
+            "scripts": { "postinstall": "node index.js" },
+            "aipage-widgets": [
+                {
+                    "type": "react-info-card",
+                    "framework": "react",
+                    "description": "信息展示卡片",
+                    "entry": "/dist/reactInfoCard.umd",
+                    "files": [ "/dist/reactInfoCard.css" ],
+                    "editorPlugin": {
+                        "pluginEntry": "../../../../../../../../../../../../../../../etc/passwd",
+                        "tag": [ "自定义组件" ],
+                        "sort": 100,
+                        "device": [ "mobile", "pc" ]
+                    }
+                }
+            ],
+            "bin": {
+                "webpack": "bin/webpack.js",
+                "foo":  "bin/foo.js"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+https://github.com/user/user.git"
+            },
+            "keywords": [ "Profile", "user" ],
+            "author": {
+                "name": "Some Guy",
+                "email": "foo@gmail.com"
+            },
+            "license": "ISC",
+            "bugs": { "url": "https://github.com/user/user/issues" },
+            "homepage": "https://github.com/user/user#readme",
+            "_id": "bin-script-custom-widget@1.0.3",
+            "_nodeVersion": "21.7.2",
+            "_npmVersion": "10.5.0",
+            "dist": {
+                "integrity": "sha512-W3brdUUcRI/zPaMLxHonVZm6/1k8/L0GZyyItc2/a2uHdyzfR56hT4P5M20Jcx1/LMKuM5YDdGm+BdRBpFPRJA==",
+                "shasum": "3ff025c44f202a42f48e8fc06600e9dd14a9af43",
+                "tarball": "https://registry.npmjs.org/bin-script-custom-widget/-/bin-script-custom-widget-1.0.3.tgz",
+                "fileCount": 8,
+                "unpackedSize": 17795,
+                "signatures": [
+                    {
+                        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                        "sig": "MEUCIQDMLiChiaKzUZbcf7Y+ExD/9JL9UVGf8S+dgpXN+L/ggwIgRIHm/YLisXe8P59M4WP38yYKng/r+WcmudLHy6zf6zE="
+                    }
+                ]
+            },
+            "_npmUser": {
+                "name": "bbbbxxx",
+                "email": "875077968@qq.com"
+            },
+            "directories": {},
+            "maintainers": [
+                {
+                    "name": "bbbbxxx",
+                    "email": "875077968@qq.com"
+                }
+            ],
+            "_npmOperationalInternal": {
+                "host": "s3://npm-registry-packages-npm-production",
+                "tmp": "tmp/bin-script-custom-widget_1.0.3_1747242058701_0.6612701370568159"
+            },
+            "_hasShrinkwrap": false
+        }
+    },
+    "time": {
+        "created": "2025-05-14T16:39:24.395Z",
+        "modified": "2025-05-14T17:00:59.079Z",
+        "1.0.0": "2025-05-14T16:39:24.571Z",
+        "1.0.1": "2025-05-14T16:44:25.980Z",
+        "1.0.2": "2025-05-14T16:51:12.982Z",
+        "1.0.3": "2025-05-14T17:00:58.898Z"
+    },
+    "bugs": { "url": "https://github.com/user/user/issues" },
+    "author": {
+        "name": "Some Guy",
+        "email": "foo@gmail.com"
+    },
+    "license": "ISC",
+    "homepage": "https://github.com/user/user#readme",
+    "keywords": [ "Profile", "user" ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/user/user.git"
+    },
+    "description": "arbitrary description",
+    "maintainers": [
+        {
+            "name": "bbbbxxx",
+            "email": "875077968@qq.com"
+        }
+    ],
+    "readme": "Some Guy\n===========\nJavascript and Python Web Engineer\n\n```\nI write code.\n```\n\n### Connect with me\n* [github.com/user][github]\n* [foo@gmail.com][email]\n* [www.willfarley.org][website]\n\n\n[github]: https://github.com/user/user\n[email]: mailto:foo@gmail.com\n",
+    "readmeFilename": "README.md"
+}

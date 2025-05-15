@@ -9,16 +9,22 @@ namespace NpmRegistry.Wrapper;
 public interface INpmRegistryClient
 {
     /// <summary>
-    /// Retrieve package metadata from https://registry.npmjs.org/ by package name and optionally, version.
-    /// If version is not specified then information for all versions is returned.
-    /// Note that some information (e.g., readme info) is only included when no version is specified.
+    /// Retrieve package metadata from https://registry.npmjs.org/ by package name and namespace.
     /// </summary>
     /// <param name="name"></param>
-    /// <param name="version"></param>
     /// <param name="ns"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<NpmPackage?> GetPackageData(string name, string? version, string? ns, CancellationToken cancellationToken); 
+    Task<NpmPackage?> GetPackageData(string name, string? ns, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Retrieve package metadata from https://registry.npmjs.org/ by package name, namespace, and version.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="ns"></param>
+    /// <param name="version"></param>
+    /// <param name="cancellationToken"></param>
+    Task<PackageVersion?> GetVersionData(string name, string? ns, string version, CancellationToken cancellationToken);
 }
 
 public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFactory httpClientFactory) : INpmRegistryClient
@@ -26,14 +32,35 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
     private readonly ILogger<NpmRegistryClient> _logger = logger;
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
 
-    public async Task<NpmPackage?> GetPackageData(string name, string? version, string? ns, CancellationToken cancellationToken)
+    public async Task<NpmPackage?> GetPackageData(string name, string? ns, CancellationToken cancellationToken)
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        var url = BuildUrl(name, null, ns);
+
+        try
+        {
+            return await httpClient.GetFromJsonAsync<NpmPackage>(url, cancellationToken);
+        }
+        catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            _logger.LogWarning("NPM Registry returned 404. Package not found at: {url}", url);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError("Error requesting package data from NPM registry: {ex}", ex);
+        }
+
+        return null;
+    }
+
+    public async Task<PackageVersion?> GetVersionData(string name, string? ns, string version, CancellationToken cancellationToken)
     {
         var httpClient = _httpClientFactory.CreateClient();
         var url = BuildUrl(name, version, ns);
 
         try
         {
-            return await httpClient.GetFromJsonAsync<NpmPackage>(url, cancellationToken);
+            return await httpClient.GetFromJsonAsync<PackageVersion>(url, cancellationToken);
         }
         catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
         {

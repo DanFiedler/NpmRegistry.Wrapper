@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace NpmRegistry.Wrapper.Tests
 {
-    public class AuthorJsonConverterTests
+    public class PersonJsonConverterTests
     {
         [Fact]
         public void When_author_is_string_then_author_name_matches_expected()
@@ -15,9 +15,9 @@ namespace NpmRegistry.Wrapper.Tests
             var reader = new Utf8JsonReader(jsonBytes);
             reader.Read();
             reader.Read();
-            var converter = new AuthorJsonConverter();
+            var converter = new PersonJsonConverter();
 
-            var author = converter.Read(ref reader, typeof(Author), new JsonSerializerOptions());
+            var author = converter.Read(ref reader, typeof(Person), new JsonSerializerOptions());
 
             Assert.NotNull(author);
             Assert.Equal(name, author.Name);
@@ -34,9 +34,9 @@ namespace NpmRegistry.Wrapper.Tests
 }}";
             var jsonBytes = Encoding.UTF8.GetBytes(json);
             var reader = new Utf8JsonReader(jsonBytes);
-            var converter = new AuthorJsonConverter();
+            var converter = new PersonJsonConverter();
 
-            var author = converter.Read(ref reader, typeof(Author), new JsonSerializerOptions());
+            var author = converter.Read(ref reader, typeof(Person), new JsonSerializerOptions());
 
             Assert.NotNull(author);
             Assert.Equal(name, author.Name);

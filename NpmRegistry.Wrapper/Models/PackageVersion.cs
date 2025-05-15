@@ -16,12 +16,17 @@ public class PackageVersion
     [JsonPropertyName("main")]
     public string Main { get; set; } = string.Empty;
 
+    [JsonPropertyName("bin")]
+    [JsonConverter(typeof(BinScriptConverter))]
+    public BinScriptCollection? BinScripts { get; set; }
+
     [JsonPropertyName("scripts")]
     [JsonConverter(typeof(ScriptListJsonConverter))]
     public ScriptList? Scripts { get; set; }
 
-    //[JsonPropertyName("author")]
-    //public Author? Author { get; set; }
+    [JsonPropertyName("author")]
+    [JsonConverter(typeof(PersonJsonConverter))]
+    public Person? Author { get; set; }
 
     [JsonPropertyName("license")]
     public string License { get; set; } = string.Empty;
@@ -40,9 +45,6 @@ public class PackageVersion
 
     [JsonPropertyName("_npmUser")]
     public Person? NpmUser { get; set; }
-
-    //[JsonPropertyName("directories")]
-    //public object? Directories { get; set; }
 
     [JsonPropertyName("maintainers")]
     public List<Person> Maintainers { get; set; } = [];

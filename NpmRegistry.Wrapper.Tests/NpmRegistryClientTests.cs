@@ -13,7 +13,7 @@ public class NpmRegistryClientTests
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("name", null, null, CancellationToken.None);
+        var packageData = await npmClient.GetPackageData("name", null, CancellationToken.None);
         
         Assert.NotNull(packageData);
         Assert.NotNull(packageData.Versions);
@@ -27,20 +27,20 @@ public class NpmRegistryClientTests
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", null, CancellationToken.None);
+        var versionData = await npmClient.GetVersionData("left_pad", null, "0.0.11", CancellationToken.None);
 
-        Assert.NotNull(packageData);
-        Assert.Single(packageData.Maintainers);
+        Assert.NotNull(versionData);
+        Assert.Single(versionData.Maintainers);
     }
 
     [Fact]
-    public async Task When_requesting_coffee_script_v1_12_7_then_scripts_count_is_two()
+    public async Task When_requesting_coffee_script_then_scripts_count_is_two()
     {
-        string json = GetJson("coffee_script_1_12_7.json");
+        string json = GetJson("coffee-script.json");
         var httpClientFactory = SetupHttpClientFactory(json);
         var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
 
-        var packageData = await npmClient.GetPackageData("left_pad", "0.0.11", null, CancellationToken.None);
+        var packageData = await npmClient.GetPackageData("coffee-script", null, CancellationToken.None);
 
         Assert.NotNull(packageData);
         Assert.NotNull(packageData.Versions);
@@ -52,6 +52,25 @@ public class NpmRegistryClientTests
         var script = version.Scripts.PackageScripts[0];
         Assert.False(string.IsNullOrEmpty(script.Operation));
         Assert.False(string.IsNullOrEmpty(script.Content));
+    }
+
+    [Fact]
+    public async Task When_requesting_custom_widget_then_bin_script_matches_expected()
+    {
+        string json = GetJson("custom-widget.json");
+        var httpClientFactory = SetupHttpClientFactory(json);
+        var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
+
+        var packageData = await npmClient.GetPackageData("custom-widget", null, CancellationToken.None);
+
+        Assert.NotNull(packageData);
+        Assert.NotNull(packageData.Versions);
+        var version = packageData.Versions.PackageVersions[^1];
+        Assert.NotNull(version.Scripts);
+        Assert.Single(version.Scripts.PackageScripts);
+        Assert.Single(version.Maintainers);
+        var binScripts = version.BinScripts;
+        Assert.NotNull(binScripts);
     }
 
     private static IHttpClientFactory SetupHttpClientFactory(string json)
