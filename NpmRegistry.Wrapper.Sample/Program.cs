@@ -27,7 +27,7 @@ internal class Program
         var npmClient = host.Services.GetRequiredService<INpmRegistryClient>();
 
         var cts = new CancellationTokenSource();
-        var packageData = await npmClient.GetPackageData(packageName, version, ns, cts.Token);
+        var packageData = await npmClient.GetPackageData(packageName, ns, cts.Token);
         if( packageData == null )
         {
             Console.WriteLine($"Failed to retrieve package data for: {packageName}");
