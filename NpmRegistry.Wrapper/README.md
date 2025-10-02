@@ -2,9 +2,9 @@
 
 ## Introduction
 
-A C#/.NET API wrapper for the [NPM Registry](https://registry.npmjs.org/).
+A C#/.NET API wrapper for the [npm registry](https://registry.npmjs.org/).
 
-The primary goal of this library is to provide strong types and corresponding support for deserialization of NPM registry's particular format of JSON responses.
+The primary goal of this library is to provide strong types and corresponding support for deserialization of the npm registry's particular format of JSON responses.
 
 ## Usage 
 
@@ -27,7 +27,6 @@ Basic usage is demonstrated in the `samples\NpmRegistry.Wrapper.Sample` project 
     var packageData = await npmRegistryClient.GetPackageData("my-package", "1.2.3", cts.Token);
     Console.WriteLine($"Package:'{packageData.Name}' by author:'{packageData.Author?.Name}'");
 ```
-
 
 # Documentation
 

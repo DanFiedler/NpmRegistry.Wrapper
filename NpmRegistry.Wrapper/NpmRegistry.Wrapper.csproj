@@ -16,7 +16,7 @@
 		<PackageId>Fiedler.NpmRegistry.Wrapper</PackageId>
 		<Authors>Dan Fiedler</Authors>
 		<Version>1.0.0</Version>
-		<PackageTags>librariesio</PackageTags>
+		<PackageTags>npm</PackageTags>
 		<Description>Client library API wrapper for https://registry.npmjs.org/</Description>
 		<PackageProjectUrl>https://github.com/DanFiedler/NpmRegistry.Wrapper</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
