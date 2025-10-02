@@ -1,8 +1,10 @@
 ﻿using NpmRegistry.Wrapper.Models;
 using System.Text.Json;
 using System.Text;
+using NpmRegistry.Wrapper.Serialization;
 
-namespace NpmRegistry.Wrapper.Tests;
+namespace NpmRegistry.Wrapper.Tests.Serialization;
+
 public class BinScriptConverterTests
 {
     [Fact]

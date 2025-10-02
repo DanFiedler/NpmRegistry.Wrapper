@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace NpmRegistry.Wrapper;
+namespace NpmRegistry.Wrapper.Serialization;
 public class BinScriptConverter : JsonConverter<BinScriptCollection>
 {
     public override BinScriptCollection? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

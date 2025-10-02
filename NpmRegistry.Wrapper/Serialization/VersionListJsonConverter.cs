@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace NpmRegistry.Wrapper;
+namespace NpmRegistry.Wrapper.Serialization;
 
 // The custom JsonConverter is necessary because the NPM registry uses properties for the collection of versions
 // (rather than using the more conventional JSON array)

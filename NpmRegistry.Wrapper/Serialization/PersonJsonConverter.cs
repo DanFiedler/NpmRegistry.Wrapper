@@ -2,35 +2,34 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace NpmRegistry.Wrapper
+namespace NpmRegistry.Wrapper.Serialization;
+
+public class PersonJsonConverter : JsonConverter<Person>
 {
-    public class PersonJsonConverter : JsonConverter<Person>
+    public override Person? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        public override Person? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        using var document = JsonDocument.ParseValue(ref reader);
+
+        var root = document.RootElement;
+        if(root.ValueKind == JsonValueKind.String)
         {
-            using var document = JsonDocument.ParseValue(ref reader);
-
-            var root = document.RootElement;
-            if(root.ValueKind == JsonValueKind.String)
+            var person = new Person();
+            string? name = root.GetString();
+            if(!string.IsNullOrEmpty(name))
             {
-                var person = new Person();
-                string? name = root.GetString();
-                if(!string.IsNullOrEmpty(name))
-                {
-                    person.Name = name;
-                }
-                return person;
+                person.Name = name;
             }
-            else if(root.ValueKind == JsonValueKind.Object)
-            {
-                return root.Deserialize<Person>();
-            }
-
-            return new Person();
+            return person;
+        }
+        else if(root.ValueKind == JsonValueKind.Object)
+        {
+            return root.Deserialize<Person>();
         }
 
-        public override void Write(Utf8JsonWriter writer, Person value, JsonSerializerOptions options)
-        {
-        }
+        return new Person();
+    }
+
+    public override void Write(Utf8JsonWriter writer, Person value, JsonSerializerOptions options)
+    {
     }
 }
