@@ -1,4 +1,4 @@
-name: release
+﻿name: release
 
 on:
   release:
@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
 
     steps:
     - uses: actions/checkout@v4
@@ -44,8 +46,15 @@ jobs:
     - name: Pack
       run: dotnet pack /home/runner/work/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper/NpmRegistry.Wrapper.csproj
 
+    # Get a short-lived NuGet API key
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: fiedlerd
+
     # Publish package to NuGet
     - name: Publish to Nuget
-      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{steps.login.outputs.NUGET_API_KEY}}
 
       
