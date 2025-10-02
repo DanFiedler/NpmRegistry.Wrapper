@@ -55,4 +55,8 @@ public class PackageVersion
 
     [JsonPropertyName("_hasShrinkwrap")]
     public bool HasShrinkwrap { get; set; }
+
+    [JsonPropertyName("dependencies")]
+    [JsonConverter(typeof(DependencyListJsonConverter))]
+    public DependencyList Dependencies { get; set; } = new();
 }

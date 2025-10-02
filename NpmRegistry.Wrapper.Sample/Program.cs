@@ -14,11 +14,11 @@ internal class Program
         string packageName = args[0];
         string? version = null;
         string? ns = null;
-        if( args.Length > 1 )
+        if (args.Length > 1)
         {
             version = args[1];
         }
-        if( args.Length > 2 )
+        if (args.Length > 2)
         {
             ns = args[2];
         }
@@ -27,8 +27,24 @@ internal class Program
         var npmClient = host.Services.GetRequiredService<INpmRegistryClient>();
 
         var cts = new CancellationTokenSource();
+
+        if (string.IsNullOrEmpty(version))
+        {
+            await WritePackageData(packageName, ns, npmClient, cts);
+        }
+        else
+        {
+            await WritePackageVersionData(packageName, ns, version, npmClient, cts);
+        }
+
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine("NpmRegistry.Wrapper.Sample complete.");
+    }
+
+    private static async Task WritePackageData(string packageName, string? ns, INpmRegistryClient npmClient, CancellationTokenSource cts)
+    {
         var packageData = await npmClient.GetPackageData(packageName, ns, cts.Token);
-        if( packageData == null )
+        if (packageData == null)
         {
             Console.WriteLine($"Failed to retrieve package data for: {packageName}");
         }
@@ -45,9 +61,25 @@ internal class Program
                 }
             }
         }
+    }
 
-        Console.WriteLine("------------------------------------");
-        Console.WriteLine("NpmRegistry.Wrapper.Sample complete.");
+    private static async Task WritePackageVersionData(string packageName, string? ns, string version, INpmRegistryClient npmClient, CancellationTokenSource cts)
+    {
+        var packageVersion = await npmClient.GetVersionData(packageName, ns, version, cts.Token);
+        if (packageVersion == null)
+        {
+            Console.WriteLine($"Failed to retrieve package version data for: {packageName}");
+        }
+        else
+        {
+            Console.WriteLine($"Package:'{packageVersion.Name}' version {packageVersion.NpmVersion} by author:'{packageVersion.Author?.Name}'");
+            Console.WriteLine($"Attestations URL: {packageVersion.Dist?.Attestations?.Url}");
+            Console.WriteLine("Dependencies:");
+            foreach (var dep in packageVersion.Dependencies.Dependencies)
+            {
+                Console.WriteLine($"  - {dep.Name}:{dep.Version}");
+            }
+        }
     }
 
     private static IHost CreateApplicationHost(string[] args)

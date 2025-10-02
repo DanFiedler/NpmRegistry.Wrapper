@@ -24,4 +24,7 @@ public class Dist
 
     [JsonPropertyName("npm-signature")]
     public string NpmSignature { get; set; } = string.Empty;
+
+    [JsonPropertyName("attestations")]
+    public Attestations? Attestations { get; set; }
 }
