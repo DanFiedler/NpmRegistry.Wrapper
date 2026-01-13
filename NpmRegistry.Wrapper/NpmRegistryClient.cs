@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using NpmRegistry.Wrapper.Models;
 using System.Net.Http.Json;
 using System.Text;
@@ -39,7 +39,7 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
 
         try
         {
-            return await httpClient.GetFromJsonAsync<NpmPackage>(url, cancellationToken);
+            return await httpClient.GetFromJsonAsync(url, ModelsSerializerContext.Default.NpmPackage, cancellationToken);
         }
         catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
@@ -60,7 +60,7 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
 
         try
         {
-            return await httpClient.GetFromJsonAsync<PackageVersion>(url, cancellationToken);
+            return await httpClient.GetFromJsonAsync(url, ModelsSerializerContext.Default.PackageVersion, cancellationToken);
         }
         catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
         {

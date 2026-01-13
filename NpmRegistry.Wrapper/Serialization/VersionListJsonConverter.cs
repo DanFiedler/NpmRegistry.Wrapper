@@ -1,4 +1,4 @@
-﻿using NpmRegistry.Wrapper.Models;
+using NpmRegistry.Wrapper.Models;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
@@ -17,7 +17,7 @@ public class VersionListJsonConverter : JsonConverter<VersionList>
         var root = document.RootElement; // "versions" {
         foreach (var jsonElement in root.EnumerateObject()) // "1.2.3" {
         {
-            var version = jsonElement.Value.Deserialize<PackageVersion>();
+            var version = jsonElement.Value.Deserialize(ModelsSerializerContext.Default.PackageVersion);
             if (version != null)
             {
                 versionList.PackageVersions.Add(version);
