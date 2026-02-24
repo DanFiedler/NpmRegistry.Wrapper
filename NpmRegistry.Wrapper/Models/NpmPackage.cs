@@ -8,11 +8,15 @@ public class NpmPackage
     [JsonPropertyName("_id")]
     public string Id { get; set; } = string.Empty;
 
+    [JsonPropertyName("_rev")]
+    public string Rev { get; set; } = string.Empty;
+
     [JsonPropertyName("name")]
     public string Name { get; set; } = string.Empty;
 
     [JsonPropertyName("dist-tags")]
     public DistTags? DistTags { get; set; }
+
 
     [JsonPropertyName("versions")]
     [JsonConverter(typeof(VersionListJsonConverter))]
@@ -31,6 +35,18 @@ public class NpmPackage
     [JsonPropertyName("author")]
     [JsonConverter(typeof(PersonJsonConverter))]
     public Person? Author { get; set; }
+
+    [JsonPropertyName("repository")]
+    public Repository? Repository { get; set; }
+
+    [JsonPropertyName("homepage")]
+    public string Homepage { get; set; } = string.Empty;
+
+    [JsonPropertyName("keywords")]
+    public List<string> Keywords { get; set; } = [];
+
+    [JsonPropertyName("bugs")]
+    public Bugs? Bugs { get; set; }
 
     [JsonPropertyName("license")]
     public string License { get; set; } = string.Empty;
