@@ -14,6 +14,9 @@ public class PackageVersion
     [JsonPropertyName("description")]
     public string Description { get; set; } = string.Empty;
 
+    [JsonPropertyName("keywords")]
+    public List<string> Keywords { get; set; } = [];
+
     [JsonPropertyName("main")]
     public string Main { get; set; } = string.Empty;
 
@@ -49,6 +52,24 @@ public class PackageVersion
 
     [JsonPropertyName("maintainers")]
     public List<Person> Maintainers { get; set; } = [];
+
+    [JsonPropertyName("contributors")]
+    public List<Person> Contributors { get; set; } = [];
+
+    [JsonPropertyName("homepage")]
+    public string Homepage { get; set; } = string.Empty;
+
+    [JsonPropertyName("bugs")]
+    public Bugs? Bugs { get; set; }
+
+    [JsonPropertyName("icon")]
+    public string Icon { get; set; } = string.Empty;
+
+    [JsonPropertyName("gitHead")]
+    public string GitHead { get; set; } = string.Empty;
+
+    [JsonPropertyName("repository")]
+    public Repository? Repository { get; set; }
 
     [JsonPropertyName("_npmOperationalInternal")]
     public NpmOperationalInternal? NpmOperationalInternal { get; set; }
