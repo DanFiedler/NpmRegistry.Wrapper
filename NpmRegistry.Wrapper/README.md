@@ -24,7 +24,7 @@ Basic usage is demonstrated in the `samples\NpmRegistry.Wrapper.Sample` project 
     // Sample usage to get information of a specific package version
     var npmRegistryClient = host.Services.GetRequiredService<INpmRegistryClient>();
     var cts = new CancellationTokenSource();
-    var packageData = await npmRegistryClient.GetPackageData("my-package", "1.2.3", cts.Token);
+    var packageData = await npmRegistryClient.GetPackageData("my-package", null, cts.Token);
     Console.WriteLine($"Package:'{packageData.Name}' by author:'{packageData.Author?.Name}'");
 ```
 
