@@ -32,7 +32,7 @@ Basic usage is demonstrated in the `samples\NpmRegistry.Wrapper.Sample` project 
 
 ## Build and Test
 
-This project targets [.NET 8.0](https://dotnet.microsoft.com/en-us/download) and can be built and tested using standard commands.
+This project targets [.NET 10.0](https://dotnet.microsoft.com/en-us/download) and can be built and tested using standard commands.
 
 - Build: `dotnet build`
 - Run Tests: `dotnet test`
