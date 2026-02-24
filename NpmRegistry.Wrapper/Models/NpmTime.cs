@@ -12,6 +12,8 @@ public class NpmTime
 
     [JsonPropertyName("unpublished")]
     public UnpublishedTime? Unpublished { get; set; }
+
+    public Dictionary<string, DateTime> VersionTimes { get; set; } = new();
 }
 
 public class UnpublishedTime

@@ -19,6 +19,7 @@ public class NpmPackage
     public VersionList? Versions { get; set; }
 
     [JsonPropertyName("time")]
+    [JsonConverter(typeof(NpmTimeJsonConverter))]
     public NpmTime? Time { get; set; }
 
     [JsonPropertyName("maintainers")]
