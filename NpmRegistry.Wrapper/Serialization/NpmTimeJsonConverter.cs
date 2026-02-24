@@ -32,7 +32,7 @@ public class NpmTimeJsonConverter : JsonConverter<NpmTime>
 
         if (root.TryGetProperty("unpublished", out var unpublishedElement))
         {
-            npmTime.Unpublished = unpublishedElement.Deserialize<UnpublishedTime>(options);
+            npmTime.Unpublished = unpublishedElement.Deserialize(ModelsSerializerContext.Default.UnpublishedTime);
         }
 
         foreach (var property in root.EnumerateObject())

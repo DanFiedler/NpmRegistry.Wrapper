@@ -17,7 +17,6 @@ public class NpmPackage
     [JsonPropertyName("dist-tags")]
     public DistTags? DistTags { get; set; }
 
-
     [JsonPropertyName("versions")]
     [JsonConverter(typeof(VersionListJsonConverter))]
     public VersionList? Versions { get; set; }
