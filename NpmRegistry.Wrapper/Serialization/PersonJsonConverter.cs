@@ -1,4 +1,4 @@
-﻿using NpmRegistry.Wrapper.Models;
+using NpmRegistry.Wrapper.Models;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -23,7 +23,7 @@ public class PersonJsonConverter : JsonConverter<Person>
         }
         else if(root.ValueKind == JsonValueKind.Object)
         {
-            return root.Deserialize<Person>();
+            return root.Deserialize(ModelsSerializerContext.Default.Person);
         }
 
         return new Person();
