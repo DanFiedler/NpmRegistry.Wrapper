@@ -60,6 +60,7 @@ public class PackageVersion
     public string Homepage { get; set; } = string.Empty;
 
     [JsonPropertyName("bugs")]
+    [JsonConverter(typeof(BugsJsonConverter))]
     public Bugs? Bugs { get; set; }
 
     [JsonPropertyName("icon")]

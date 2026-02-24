@@ -46,6 +46,7 @@ public class NpmPackage
     public List<string> Keywords { get; set; } = [];
 
     [JsonPropertyName("bugs")]
+    [JsonConverter(typeof(BugsJsonConverter))]
     public Bugs? Bugs { get; set; }
 
     [JsonPropertyName("license")]

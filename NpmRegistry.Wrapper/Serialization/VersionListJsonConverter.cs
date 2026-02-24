@@ -17,6 +17,8 @@ public class VersionListJsonConverter : JsonConverter<VersionList>
         var root = document.RootElement; // "versions" {
         foreach (var jsonElement in root.EnumerateObject()) // "1.2.3" {
         {
+            string v = jsonElement.Name;
+
             var version = jsonElement.Value.Deserialize(ModelsSerializerContext.Default.PackageVersion);
             if (version != null)
             {
