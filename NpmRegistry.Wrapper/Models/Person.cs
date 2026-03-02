@@ -1,7 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using NpmRegistry.Wrapper.Serialization;
+using System.Text.Json.Serialization;
 
 namespace NpmRegistry.Wrapper.Models;
 
+[JsonConverter(typeof(PersonJsonConverter))]
 public class Person
 {
     [JsonPropertyName("name")]

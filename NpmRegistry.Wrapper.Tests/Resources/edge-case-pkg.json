@@ -1,0 +1,48 @@
+{
+  "_id": "edge-case-pkg",
+  "_rev": "1-abc",
+  "name": "edge-case-pkg",
+  "description": "A package with edge case metadata formats",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "edge-case-pkg",
+      "version": "1.0.0",
+      "description": "A package with edge case metadata formats",
+      "main": "index.js",
+      "bin": "./bin/edge-case-pkg.js",
+      "author": "Test Author",
+      "license": "MIT",
+      "_id": "edge-case-pkg@1.0.0",
+      "contributors": [
+        "Jane Doe",
+        "John Smith",
+        { "name": "Object Contributor", "email": "obj@example.com" }
+      ],
+      "repository": "github:testuser/edge-case-pkg",
+      "maintainers": [
+        { "name": "testuser", "email": "test@example.com" }
+      ],
+      "dist": {
+        "shasum": "abc123",
+        "tarball": "https://registry.npmjs.org/edge-case-pkg/-/edge-case-pkg-1.0.0.tgz"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2024-01-01T00:00:00.000Z",
+    "modified": "2024-01-01T00:00:00.000Z",
+    "1.0.0": "2024-01-01T00:00:00.000Z"
+  },
+  "maintainers": [
+    { "name": "testuser", "email": "test@example.com" }
+  ],
+  "author": { "name": "Test Author" },
+  "repository": "github:testuser/edge-case-pkg",
+  "license": "MIT",
+  "readme": "# edge-case-pkg",
+  "readmeFilename": "README.md"
+}

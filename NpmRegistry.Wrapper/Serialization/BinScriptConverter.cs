@@ -11,17 +11,28 @@ public class BinScriptConverter : JsonConverter<BinScriptCollection>
 
         var collection = new BinScriptCollection();
 
-        var root = document.RootElement; // "bin" {
-        foreach (var jsonElement in root.EnumerateObject()) // "webpack" {
+        var root = document.RootElement;
+        if (root.ValueKind == JsonValueKind.String)
         {
-            string name = jsonElement.Name;
-            string path = jsonElement.Value.ToString();
-            var script = new BinScript
+            collection.BinScripts.Add(new BinScript
             {
-                Name = name,
-                Path = path
-            };
-            collection.BinScripts.Add(script);
+                Name = string.Empty,
+                Path = root.GetString() ?? string.Empty
+            });
+        }
+        else
+        {
+            foreach (var jsonElement in root.EnumerateObject())
+            {
+                string name = jsonElement.Name;
+                string path = jsonElement.Value.ToString();
+                var script = new BinScript
+                {
+                    Name = name,
+                    Path = path
+                };
+                collection.BinScripts.Add(script);
+            }
         }
 
         return collection;

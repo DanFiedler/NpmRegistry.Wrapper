@@ -1,7 +1,9 @@
+using NpmRegistry.Wrapper.Serialization;
 using System.Text.Json.Serialization;
 
 namespace NpmRegistry.Wrapper.Models;
 
+[JsonConverter(typeof(RepositoryJsonConverter))]
 public class Repository
 {
     [JsonPropertyName("type")]

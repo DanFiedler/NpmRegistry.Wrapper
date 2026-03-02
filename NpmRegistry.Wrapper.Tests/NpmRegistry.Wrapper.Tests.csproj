@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\edge-case-pkg.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Resources\left_pad.json" />
     <EmbeddedResource Include="Resources\left_pad_v11.json" />
   </ItemGroup>
