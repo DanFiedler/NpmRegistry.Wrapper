@@ -75,6 +75,10 @@
       "maintainers": [
         { "name": "testuser", "email": "test@example.com" }
       ],
+      "engines": [
+        "node",
+        "rhino"
+      ],
       "dist": {
         "shasum": "def456",
         "tarball": "https://registry.npmjs.org/edge-case-pkg-v2/-/edge-case-pkg-v2-2.0.0.tgz"
