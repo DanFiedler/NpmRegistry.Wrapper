@@ -17,13 +17,21 @@ public class BugsJsonConverter : JsonConverter<Bugs>
         {
             bugs.Url = root.GetString() ?? string.Empty;
         }
-        else if (root.TryGetProperty("url", out var urlElement) && urlElement.ValueKind == JsonValueKind.String)
+        else if (root.ValueKind == JsonValueKind.Object)
         {
-            bugs.Url = urlElement.GetString() ?? string.Empty;
-        }
-        else if (root.TryGetProperty("name", out var nameElement) && nameElement.ValueKind == JsonValueKind.String)
-        {
-            bugs.Url = nameElement.GetString() ?? string.Empty;
+            if (root.TryGetProperty("url", out var urlElement) && urlElement.ValueKind == JsonValueKind.String)
+            {
+                bugs.Url = urlElement.GetString() ?? string.Empty;
+            }
+            else if (root.TryGetProperty("name", out var nameElement) && nameElement.ValueKind == JsonValueKind.String)
+            {
+                bugs.Url = nameElement.GetString() ?? string.Empty;
+            }
+
+            if (root.TryGetProperty("email", out var emailElement) && emailElement.ValueKind == JsonValueKind.String)
+            {
+                bugs.Email = emailElement.GetString() ?? string.Empty;
+            }
         }
 
         return bugs;

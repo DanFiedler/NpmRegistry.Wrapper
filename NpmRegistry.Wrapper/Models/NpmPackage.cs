@@ -48,6 +48,7 @@ public class NpmPackage
     public Bugs? Bugs { get; set; }
 
     [JsonPropertyName("license")]
+    [JsonConverter(typeof(LicenseJsonConverter))]
     public string License { get; set; } = string.Empty;
 
     [JsonPropertyName("readme")]

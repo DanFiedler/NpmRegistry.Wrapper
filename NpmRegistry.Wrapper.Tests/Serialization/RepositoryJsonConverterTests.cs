@@ -42,4 +42,26 @@ public class RepositoryJsonConverterTests
         Assert.Equal(type, repository.Type);
         Assert.Equal(url, repository.Url);
     }
+
+    [Fact]
+    public void When_repository_is_object_with_directory_then_directory_is_set()
+    {
+        string json = """
+        {
+            "type": "git",
+            "url": "git+https://github.com/user/monorepo.git",
+            "directory": "packages/core"
+        }
+        """;
+        var jsonBytes = Encoding.UTF8.GetBytes(json);
+        var reader = new Utf8JsonReader(jsonBytes);
+        var converter = new RepositoryJsonConverter();
+
+        var repository = converter.Read(ref reader, typeof(Repository), new JsonSerializerOptions());
+
+        Assert.NotNull(repository);
+        Assert.Equal("git", repository.Type);
+        Assert.Equal("git+https://github.com/user/monorepo.git", repository.Url);
+        Assert.Equal("packages/core", repository.Directory);
+    }
 }

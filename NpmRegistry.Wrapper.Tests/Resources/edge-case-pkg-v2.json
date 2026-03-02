@@ -1,0 +1,107 @@
+{
+  "_id": "edge-case-pkg-v2",
+  "_rev": "2-def",
+  "name": "edge-case-pkg-v2",
+  "description": "A package with comprehensive edge case metadata formats",
+  "dist-tags": {
+    "latest": "2.0.0",
+    "next": "3.0.0-beta.1",
+    "beta": "3.0.0-beta.1",
+    "alpha": "3.0.0-alpha.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "edge-case-pkg-v2",
+      "version": "1.0.0",
+      "description": "Version with edge case formats",
+      "main": "index.js",
+      "bin": "./bin/edge-case-pkg-v2.js",
+      "author": "Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)",
+      "license": { "type": "ISC", "url": "https://opensource.org/licenses/ISC" },
+      "_id": "edge-case-pkg-v2@1.0.0",
+      "deprecated": "This version has a critical bug. Please upgrade to 2.0.0.",
+      "contributors": [
+        "Jane Doe <jane@example.com>",
+        "John Smith <john@example.com> (https://johnsmith.dev)",
+        { "name": "Object Contributor", "email": "obj@example.com", "url": "https://objcontributor.dev" }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/testuser/edge-case-pkg-v2.git",
+        "directory": "packages/core"
+      },
+      "bugs": {
+        "url": "https://github.com/testuser/edge-case-pkg-v2/issues",
+        "email": "bugs@edge-case-pkg-v2.com"
+      },
+      "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=6.0.0"
+      },
+      "maintainers": [
+        { "name": "testuser", "email": "test@example.com" }
+      ],
+      "dist": {
+        "integrity": "sha512-abc123def456",
+        "shasum": "abc123",
+        "tarball": "https://registry.npmjs.org/edge-case-pkg-v2/-/edge-case-pkg-v2-1.0.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 3000000000
+      },
+      "dependencies": {
+        "lodash": "^4.17.21"
+      },
+      "devDependencies": {
+        "jest": "^29.0.0",
+        "eslint": "^8.0.0"
+      },
+      "peerDependencies": {
+        "react": "^18.0.0"
+      },
+      "optionalDependencies": {
+        "fsevents": "^2.3.2"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "edge-case-pkg-v2",
+      "version": "2.0.0",
+      "description": "Current stable version",
+      "main": "index.js",
+      "author": { "name": "Barney Rubble", "email": "b@rubble.com", "url": "http://barnyrubble.tumblr.com/" },
+      "license": "MIT",
+      "_id": "edge-case-pkg-v2@2.0.0",
+      "repository": "github:testuser/edge-case-pkg-v2",
+      "maintainers": [
+        { "name": "testuser", "email": "test@example.com" }
+      ],
+      "dist": {
+        "shasum": "def456",
+        "tarball": "https://registry.npmjs.org/edge-case-pkg-v2/-/edge-case-pkg-v2-2.0.0.tgz"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2024-01-01T00:00:00.000Z",
+    "modified": "2024-06-01T00:00:00.000Z",
+    "1.0.0": "2024-01-01T00:00:00.000Z",
+    "2.0.0": "2024-06-01T00:00:00.000Z"
+  },
+  "maintainers": [
+    { "name": "testuser", "email": "test@example.com" }
+  ],
+  "author": "Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testuser/edge-case-pkg-v2.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/testuser/edge-case-pkg-v2/issues",
+    "email": "bugs@edge-case-pkg-v2.com"
+  },
+  "license": "MIT",
+  "readme": "# edge-case-pkg-v2",
+  "readmeFilename": "README.md"
+}

@@ -28,6 +28,11 @@ public class RepositoryJsonConverter : JsonConverter<Repository>
             {
                 repository.Type = typeElement.GetString() ?? string.Empty;
             }
+
+            if (root.TryGetProperty("directory", out var directoryElement) && directoryElement.ValueKind == JsonValueKind.String)
+            {
+                repository.Directory = directoryElement.GetString() ?? string.Empty;
+            }
         }
 
         return repository;
