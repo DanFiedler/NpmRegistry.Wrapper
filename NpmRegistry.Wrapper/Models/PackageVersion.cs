@@ -82,6 +82,7 @@ public class PackageVersion
     public string Deprecated { get; set; } = string.Empty;
 
     [JsonPropertyName("engines")]
+    [JsonConverter(typeof(EnginesJsonConverter))]
     public Dictionary<string, string> Engines { get; set; } = [];
 
     [JsonPropertyName("dependencies")]

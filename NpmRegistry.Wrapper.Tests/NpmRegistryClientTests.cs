@@ -174,6 +174,23 @@ public class NpmRegistryClientTests
     }
 
     [Fact]
+    public async Task When_requesting_edge_case_v2_then_engines_array_is_deserialized()
+    {
+        string json = GetJson("edge-case-pkg-v2.json");
+        var httpClientFactory = SetupHttpClientFactory(json);
+        var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
+
+        var packageData = await npmClient.GetPackageData("edge-case-pkg-v2", null, CancellationToken.None);
+
+        Assert.NotNull(packageData);
+        Assert.NotNull(packageData.Versions);
+        var v2 = packageData.Versions.PackageVersions[1];
+        Assert.Equal(2, v2.Engines.Count);
+        Assert.Equal(string.Empty, v2.Engines["node"]);
+        Assert.Equal(string.Empty, v2.Engines["rhino"]);
+    }
+
+    [Fact]
     public async Task When_requesting_edge_case_v2_then_additional_dependency_types_are_deserialized()
     {
         string json = GetJson("edge-case-pkg-v2.json");
