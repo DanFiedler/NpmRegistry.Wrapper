@@ -29,7 +29,6 @@ public class PackageVersion
     public ScriptList? Scripts { get; set; }
 
     [JsonPropertyName("author")]
-    [JsonConverter(typeof(PersonJsonConverter))]
     public Person? Author { get; set; }
 
     [JsonPropertyName("license")]

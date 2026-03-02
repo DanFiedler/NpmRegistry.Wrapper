@@ -73,6 +73,36 @@ public class NpmRegistryClientTests
         Assert.NotNull(binScripts);
     }
 
+    [Fact]
+    public async Task When_requesting_edge_case_pkg_then_string_contributors_bin_and_repository_deserialize()
+    {
+        string json = GetJson("edge-case-pkg.json");
+        var httpClientFactory = SetupHttpClientFactory(json);
+        var npmClient = new NpmRegistryClient(Substitute.For<ILogger<NpmRegistryClient>>(), httpClientFactory);
+
+        var packageData = await npmClient.GetPackageData("edge-case-pkg", null, CancellationToken.None);
+
+        Assert.NotNull(packageData);
+        Assert.NotNull(packageData.Repository);
+        Assert.Equal("github:testuser/edge-case-pkg", packageData.Repository.Url);
+
+        Assert.NotNull(packageData.Versions);
+        var version = packageData.Versions.PackageVersions[0];
+
+        Assert.Equal(3, version.Contributors.Count);
+        Assert.Equal("Jane Doe", version.Contributors[0].Name);
+        Assert.Equal("John Smith", version.Contributors[1].Name);
+        Assert.Equal("Object Contributor", version.Contributors[2].Name);
+        Assert.Equal("obj@example.com", version.Contributors[2].Email);
+
+        Assert.NotNull(version.BinScripts);
+        Assert.Single(version.BinScripts.BinScripts);
+        Assert.Equal("./bin/edge-case-pkg.js", version.BinScripts.BinScripts[0].Path);
+
+        Assert.NotNull(version.Repository);
+        Assert.Equal("github:testuser/edge-case-pkg", version.Repository.Url);
+    }
+
     private static IHttpClientFactory SetupHttpClientFactory(string json)
     {
         var httpMessageHandler = new FakeHttpMessageHandler(json);

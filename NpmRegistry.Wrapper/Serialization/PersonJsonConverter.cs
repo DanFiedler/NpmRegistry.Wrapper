@@ -23,7 +23,16 @@ public class PersonJsonConverter : JsonConverter<Person>
         }
         else if(root.ValueKind == JsonValueKind.Object)
         {
-            return root.Deserialize(ModelsSerializerContext.Default.Person);
+            var person = new Person();
+            if (root.TryGetProperty("name", out var nameElement) && nameElement.ValueKind == JsonValueKind.String)
+            {
+                person.Name = nameElement.GetString() ?? string.Empty;
+            }
+            if (root.TryGetProperty("email", out var emailElement) && emailElement.ValueKind == JsonValueKind.String)
+            {
+                person.Email = emailElement.GetString() ?? string.Empty;
+            }
+            return person;
         }
 
         return new Person();

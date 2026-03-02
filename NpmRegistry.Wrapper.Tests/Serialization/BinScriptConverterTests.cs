@@ -34,4 +34,20 @@ public class BinScriptConverterTests
         Assert.Equal(path1, scriptOne.Path);
         Assert.Equal(path2, scriptTwo.Path);
     }
+
+    [Fact]
+    public void When_bin_is_string_then_path_matches_expected()
+    {
+        string binPath = "./bin/my-tool.js";
+        string json = @$"""{binPath}""";
+        var jsonBytes = Encoding.UTF8.GetBytes(json);
+        var reader = new Utf8JsonReader(jsonBytes);
+        var converter = new BinScriptConverter();
+
+        var binScripts = converter.Read(ref reader, typeof(BinScriptCollection), new JsonSerializerOptions());
+
+        Assert.NotNull(binScripts);
+        Assert.Single(binScripts.BinScripts);
+        Assert.Equal(binPath, binScripts.BinScripts[0].Path);
+    }
 }

@@ -42,4 +42,19 @@ public class PersonJsonConverterTests
         Assert.NotNull(author);
         Assert.Equal(name, author.Name);
     }
+
+    [Fact]
+    public void When_contributors_are_strings_then_names_match_expected()
+    {
+        string name1 = "Jane Doe";
+        string name2 = "John Smith";
+        string json = @$"[""{name1}"",""{name2}""]";
+
+        var people = JsonSerializer.Deserialize<List<Person>>(json);
+
+        Assert.NotNull(people);
+        Assert.Equal(2, people.Count);
+        Assert.Equal(name1, people[0].Name);
+        Assert.Equal(name2, people[1].Name);
+    }
 }
