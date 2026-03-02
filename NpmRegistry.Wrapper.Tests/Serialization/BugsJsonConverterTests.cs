@@ -82,4 +82,21 @@ public class BugsJsonConverterTests
         Assert.NotNull(result);
         Assert.Equal(string.Empty, result.Url);
     }
+
+    [Fact]
+    public void Deserialize_WithUrlAndEmail_SetsBoth()
+    {
+        const string json = """
+        {
+            "url": "https://github.com/example/repo/issues",
+            "email": "bugs@example.com"
+        }
+        """;
+
+        var result = JsonSerializer.Deserialize<Bugs>(json, Options);
+
+        Assert.NotNull(result);
+        Assert.Equal("https://github.com/example/repo/issues", result.Url);
+        Assert.Equal("bugs@example.com", result.Email);
+    }
 }

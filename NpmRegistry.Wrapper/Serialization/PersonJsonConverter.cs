@@ -1,11 +1,16 @@
 using NpmRegistry.Wrapper.Models;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace NpmRegistry.Wrapper.Serialization;
 
-public class PersonJsonConverter : JsonConverter<Person>
+public partial class PersonJsonConverter : JsonConverter<Person>
 {
+    // Matches: Name <email> (url) — email and url are optional
+    [GeneratedRegex(@"^(?<name>[^<(]+?)(?:\s*<(?<email>[^>]+)>)?(?:\s*\((?<url>[^)]+)\))?\s*$")]
+    private static partial Regex PersonStringRegex();
+
     public override Person? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         using var document = JsonDocument.ParseValue(ref reader);
@@ -14,10 +19,26 @@ public class PersonJsonConverter : JsonConverter<Person>
         if(root.ValueKind == JsonValueKind.String)
         {
             var person = new Person();
-            string? name = root.GetString();
-            if(!string.IsNullOrEmpty(name))
+            string? value = root.GetString();
+            if(!string.IsNullOrEmpty(value))
             {
-                person.Name = name;
+                var match = PersonStringRegex().Match(value);
+                if (match.Success)
+                {
+                    person.Name = match.Groups["name"].Value.Trim();
+                    if (match.Groups["email"].Success)
+                    {
+                        person.Email = match.Groups["email"].Value;
+                    }
+                    if (match.Groups["url"].Success)
+                    {
+                        person.Url = match.Groups["url"].Value;
+                    }
+                }
+                else
+                {
+                    person.Name = value;
+                }
             }
             return person;
         }
@@ -31,6 +52,10 @@ public class PersonJsonConverter : JsonConverter<Person>
             if (root.TryGetProperty("email", out var emailElement) && emailElement.ValueKind == JsonValueKind.String)
             {
                 person.Email = emailElement.GetString() ?? string.Empty;
+            }
+            if (root.TryGetProperty("url", out var urlElement) && urlElement.ValueKind == JsonValueKind.String)
+            {
+                person.Url = urlElement.GetString() ?? string.Empty;
             }
             return person;
         }

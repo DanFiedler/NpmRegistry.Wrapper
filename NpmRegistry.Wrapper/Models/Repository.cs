@@ -11,4 +11,7 @@ public class Repository
 
     [JsonPropertyName("url")]
     public string Url { get; set; } = string.Empty;
+
+    [JsonPropertyName("directory")]
+    public string Directory { get; set; } = string.Empty;
 }

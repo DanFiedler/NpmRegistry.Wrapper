@@ -32,6 +32,7 @@ public class PackageVersion
     public Person? Author { get; set; }
 
     [JsonPropertyName("license")]
+    [JsonConverter(typeof(LicenseJsonConverter))]
     public string License { get; set; } = string.Empty;
 
     [JsonPropertyName("_id")]
@@ -77,7 +78,25 @@ public class PackageVersion
     [JsonPropertyName("_hasShrinkwrap")]
     public bool HasShrinkwrap { get; set; }
 
+    [JsonPropertyName("deprecated")]
+    public string Deprecated { get; set; } = string.Empty;
+
+    [JsonPropertyName("engines")]
+    public Dictionary<string, string> Engines { get; set; } = [];
+
     [JsonPropertyName("dependencies")]
     [JsonConverter(typeof(DependencyListJsonConverter))]
     public DependencyList Dependencies { get; set; } = new();
+
+    [JsonPropertyName("devDependencies")]
+    [JsonConverter(typeof(DependencyListJsonConverter))]
+    public DependencyList DevDependencies { get; set; } = new();
+
+    [JsonPropertyName("peerDependencies")]
+    [JsonConverter(typeof(DependencyListJsonConverter))]
+    public DependencyList PeerDependencies { get; set; } = new();
+
+    [JsonPropertyName("optionalDependencies")]
+    [JsonConverter(typeof(DependencyListJsonConverter))]
+    public DependencyList OptionalDependencies { get; set; } = new();
 }

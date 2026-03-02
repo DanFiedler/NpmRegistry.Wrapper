@@ -17,7 +17,7 @@ public class Dist
     public int FileCount { get; set; }
 
     [JsonPropertyName("unpackedSize")]
-    public int UnpackedSize { get; set; }
+    public long UnpackedSize { get; set; }
 
     [JsonPropertyName("signatures")]
     public List<Signature> Signatures { get; set; } = [];
