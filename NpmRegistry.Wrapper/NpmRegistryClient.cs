@@ -1,8 +1,9 @@
 using Microsoft.Extensions.Logging;
 using NpmRegistry.Wrapper.Models;
-using System.Net.Http.Json;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 
 namespace NpmRegistry.Wrapper;
 
@@ -39,7 +40,7 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
 
         try
         {
-            return await httpClient.GetFromJsonAsync(url, ModelsSerializerContext.Default.NpmPackage, cancellationToken);
+            return await GetJsonAsync(httpClient, url, ModelsSerializerContext.Default.NpmPackage, cancellationToken);
         }
         catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
@@ -60,7 +61,7 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
 
         try
         {
-            return await httpClient.GetFromJsonAsync(url, ModelsSerializerContext.Default.PackageVersion, cancellationToken);
+            return await GetJsonAsync(httpClient, url, ModelsSerializerContext.Default.PackageVersion, cancellationToken);
         }
         catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
@@ -97,5 +98,12 @@ public class NpmRegistryClient(ILogger<NpmRegistryClient> logger, IHttpClientFac
         }
 
         return sb.ToString();
+    }
+
+    private async Task<TValue?> GetJsonAsync<TValue>(HttpClient client, string requestUri, JsonTypeInfo<TValue> jsonTypeInfo, CancellationToken cancellationToken)
+    {
+        var response = await client.GetAsync(requestUri, cancellationToken);
+        var stream = await response.Content.ReadAsStreamAsync(cancellationToken);
+        return await JsonSerializer.DeserializeAsync(stream, jsonTypeInfo, cancellationToken);
     }
 }
